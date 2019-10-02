@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { getPilots } from '../services/sw-api';
 import './PilotList.css';
 
@@ -19,12 +18,9 @@ class PilotList extends Component {
         this.state.pilots ?
         <div className='PilotList-pilot'>
         {this.state.pilots.map((pilot, idx) => 
-              <span><Link
-                to={`/people/${idx}`}
-                key={pilot.name}
-              >
+              <span>
                 {pilot.name}
-              </Link></span>
+              </span>
             )}
         </div>
         :
